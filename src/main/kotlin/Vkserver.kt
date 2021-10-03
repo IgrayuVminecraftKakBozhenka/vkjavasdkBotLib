@@ -16,8 +16,9 @@ object VkServer {
 
     @Throws(NullPointerException::class, ApiException::class, InterruptedException::class)
     @JvmStatic
-    fun main() {
+    fun main(args: Array<String>) {
         println("Start")
+        CommandManager.addCommand(UnknownCommand("unknown"))
         while (true) {
             Thread.sleep(300)
             try {

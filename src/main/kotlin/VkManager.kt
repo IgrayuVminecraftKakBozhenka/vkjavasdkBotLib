@@ -1,3 +1,5 @@
+import kotlin.random.Random
+
 class VkManager {
 
     companion object {
@@ -14,8 +16,14 @@ class VkManager {
     }
 
     fun sendMessage(msg: String?, peerId: Int) {
-        if (msg != null) {
+        if (msg == null) {
             println("empty message")
+            return
+        }
+        try {
+            vkCore?.vkApiClient?.messages()?.send(vkCore?.groupActor)?.message(msg)?.peerId(peerId)?.randomId(Random.nextInt())?.execute()
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 

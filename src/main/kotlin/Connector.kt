@@ -7,8 +7,8 @@ import com.vk.api.sdk.objects.messages.Message
 class Core(
     private val groupId: Int = GROUP_ID,
     private val accessToken: String = ACCESS_TOKEN,
-    private val groupActor: GroupActor = GroupActor(groupId, accessToken),
-    private val vkApiClient: VkApiClient = VkApiClient(HttpTransportClient.getInstance()),
+    val groupActor: GroupActor = GroupActor(groupId, accessToken),
+    val vkApiClient: VkApiClient = VkApiClient(HttpTransportClient.getInstance()),
 ) {
 
     companion object {
