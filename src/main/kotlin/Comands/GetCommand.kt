@@ -1,3 +1,5 @@
+import Comands.Command
+import Comands.CommandManager
 import com.vk.api.sdk.objects.messages.Message
 
 fun getCommand(commands: Collection<Command>, message: Message): Command {

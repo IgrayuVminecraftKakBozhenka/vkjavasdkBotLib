@@ -1,3 +1,5 @@
+package Comands
+
 import com.vk.api.sdk.objects.messages.Message
 
 

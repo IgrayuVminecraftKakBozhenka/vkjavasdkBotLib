@@ -1,3 +1,5 @@
+package Comands
+
 object CommandManager {
     private val commands = HashSet<Command>()
 
