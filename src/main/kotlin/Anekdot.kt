@@ -1,4 +1,5 @@
-import Comands.Command
+import Comands.*
+import Keyboards.getKeyboard
 import Keyboards.getKeyboardButton
 import Server.VkManager
 import com.vk.api.sdk.objects.messages.*
@@ -15,7 +16,13 @@ class Anekdot(name: String = "анекдот") : Command(name) {
 
     override fun exec(message: Message) {
         allKeys.add(line1)
-        val keyboard = Keyboard().setButtons(allKeys)
-        VkManager().sendMessage("Внимание анекдот..................", message.peerId, keyboard)
+        val keyboard = getKeyboard(allKeys)
+        if (State.actualState.name == InitialState().name) {
+            State.setNewState(AnekdotState())
+            VkManager().sendMessage("Внимание анекдот... \n Два еврея захотели сбежать из концлагеря, но их спалили", message.peerId, keyboard)
+        } else {
+
+        }
     }
 }
+

@@ -7,6 +7,9 @@ fun getKeyboardButton(label: String, type: TemplateActionTypeNames, color: Keybo
     return KeyboardButton().setAction(KeyboardButtonAction().setLabel(label).setType(type)).setColor(color)
 }
 
+fun getKeyboard(lines: List<List<KeyboardButton>>): Keyboard = Keyboard().setButtons(lines)
+
+
 
 
 
