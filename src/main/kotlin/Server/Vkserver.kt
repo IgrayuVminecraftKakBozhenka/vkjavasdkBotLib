@@ -20,6 +20,10 @@ object VkServer {
         println("Start")
         CommandManager.addCommand(UnknownCommand("unknown"))
         CommandManager.addCommand(Anekdot())
+        CommandManager.addCommand(KidsAnekdot())
+        CommandManager.addCommand(BlackAnekdot())
+        CommandManager.addCommand(UkraineAnekdot())
+
         while (true) {
             Thread.sleep(300)
             try {
